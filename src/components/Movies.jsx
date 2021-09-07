@@ -2,11 +2,11 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
-import { getMoviesById } from "../services/API";
+import { getMovies } from "../services/API";
 
 const Movies = () => {
   const { data, error, isError, isLoading } = useQuery(["movies"], () => {
-    return getMoviesById();
+    return getMovies();
   });
 
   return (
@@ -21,9 +21,13 @@ const Movies = () => {
         )}
 
         {data &&
-          data.map((movie, i) => (
-            <div>
-              <p key={i}>{movie.title}HEJHEJ</p>
+          data.moviedata.map((movie, i) => (
+            <div key={i}>
+              <p>{movie.title}</p>
+              <img
+                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                alt={movie.title}
+              />
             </div>
           ))}
       </Container>
