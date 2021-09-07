@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NavbarComponent from "./components/Navbar";
+import FooterComponent from "./components/Footer";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
@@ -26,6 +27,7 @@ function App() {
               <HomePage />
             </Route>
           </Switch>
+          <FooterComponent />
         </QueryClientProvider>
       </Router>
     </div>
