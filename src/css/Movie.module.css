@@ -18,3 +18,7 @@
 .img {
   border-radius: 10px;
 }
+
+.img:hover {
+  filter: brightness(1.2);
+}
