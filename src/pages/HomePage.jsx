@@ -1,7 +1,10 @@
+import React from "react";
+import Movies from "../components/Movies";
+
 const HomePage = () => {
   return (
     <div>
-      <h1>CINEMATIC</h1>
+      <Movies />
     </div>
   );
 };
