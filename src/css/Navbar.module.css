@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  padding: 1px 1px 1px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.link {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(112, 112, 112);
+}
+
+.linkLogIn {
+  margin-right: 0 !important;
+}
+
+.logo {
+  cursor: pointer;
+}

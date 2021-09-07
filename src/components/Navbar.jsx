@@ -1,12 +1,10 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
-import { Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const NavbarComponent = () => {
   return (
     <div>
-      <Navbar bg="light" variant="light">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
           <Navbar.Brand href="/">
             <img
@@ -16,12 +14,15 @@ const NavbarComponent = () => {
               height="30"
             />
           </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/movies">Movies</Nav.Link>
-            <Nav.Link href="/latest">Latest</Nav.Link>
-            <Nav.Link href="/popular">Popular</Nav.Link>
-            <Nav.Link href="/toplist">Toplist</Nav.Link>
-          </Nav>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/movies">Movies</Nav.Link>
+              <Nav.Link href="/latest">Latest</Nav.Link>
+              <Nav.Link href="/popular">Popular</Nav.Link>
+              <Nav.Link href="/toplist">Toplist</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

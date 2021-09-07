@@ -3,6 +3,7 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
 import { getMovies } from "../services/API";
+import styles from "../css/Movie.module.css";
 
 const Movies = () => {
   const { data, error, isError, isLoading } = useQuery(["movies"], () => {
@@ -20,16 +21,18 @@ const Movies = () => {
           </Alert>
         )}
 
-        {data &&
-          data.moviedata.map((movie, i) => (
-            <div key={i}>
-              <p>{movie.title}</p>
-              <img
-                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                alt={movie.title}
-              />
-            </div>
-          ))}
+        <div className={styles.cardWrapper}>
+          {data &&
+            data.moviedata.map((movie, i) => (
+              <div className={styles.movieCard} key={i}>
+                <img
+                  className={styles.img}
+                  src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </div>
+            ))}
+        </div>
       </Container>
     </div>
   );
