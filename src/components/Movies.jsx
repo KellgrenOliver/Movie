@@ -2,11 +2,12 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
-import { getMoviesById } from "../services/API";
+import { getMovies } from "../services/API";
+import styles from "../css/Movie.module.css";
 
 const Movies = () => {
   const { data, error, isError, isLoading } = useQuery(["movies"], () => {
-    return getMoviesById();
+    return getMovies();
   });
 
   return (
@@ -20,12 +21,18 @@ const Movies = () => {
           </Alert>
         )}
 
-        {data &&
-          data.map((movie, i) => (
-            <div>
-              <p key={i}>{movie.title}HEJHEJ</p>
-            </div>
-          ))}
+        <div className={styles.cardWrapper}>
+          {data &&
+            data.moviedata.map((movie, i) => (
+              <div className={styles.movieCard} key={i}>
+                <img
+                  className={styles.img}
+                  src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </div>
+            ))}
+        </div>
       </Container>
     </div>
   );
