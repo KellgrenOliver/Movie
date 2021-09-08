@@ -19,7 +19,7 @@ const NavbarComponent = () => {
             <Nav className="me-auto">
               <Nav.Link href="/latest">Latest</Nav.Link>
               <Nav.Link href="/popular">Popular</Nav.Link>
-              <Nav.Link href="/toplist">Toplist</Nav.Link>
+              <Nav.Link href="/toprated">Top Rated</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
