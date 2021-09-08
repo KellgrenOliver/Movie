@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import { useQuery } from "react-query";
 import { getMovies } from "../services/API";
 import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 
 const Movies = () => {
-  const { data, error, isError, isLoading } = useQuery(["movies"], () => {
-    return getMovies();
-  });
+  const [page, setPage] = useState(1);
+
+  const { data, error, isError, isLoading, isPreviousData } = useQuery(
+    ["movies", page],
+    () => getMovies("movies", page)
+  );
 
   return (
     <div>
@@ -35,6 +39,29 @@ const Movies = () => {
                 </Link>
               </div>
             ))}
+          <div className="pagination d-flex justify-content-between align-items-center mt-4">
+            <Button
+              onClick={() =>
+                setPage((currentPage) => Math.max(currentPage - 1, 1))
+              }
+              disabled={page === 1}
+            >
+              Previous Page
+            </Button>
+            <span>Current Page: {page}</span>
+          </div>
+
+          <Button
+            onClick={() => {
+              if (!isPreviousData && data.results.next) {
+                setPage((currentPage) => currentPage + 1);
+              }
+            }}
+            // Disable the Next Page button until we know a next page is available
+            disabled={isPreviousData || !data?.results.next}
+          >
+            Next Page
+          </Button>
         </div>
       </Container>
     </div>

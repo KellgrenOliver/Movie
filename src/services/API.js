@@ -11,8 +11,10 @@ const get = async (endpoint) => {
   };
 };
 
-export const getMovies = async () => {
-  return await get(`/discover/movie/?api_key=51695a473e0471ff2582f84f2aaa5cf5`);
+export const getMovies = async (page) => {
+  return await get(
+    `/discover/movie/?api_key=51695a473e0471ff2582f84f2aaa5cf5&page=${page}`
+  );
 };
 
 export const getMovie = async (id) => {
