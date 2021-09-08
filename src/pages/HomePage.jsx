@@ -1,9 +1,10 @@
 import React from "react";
 import Movies from "../components/Movies";
+import styles from "../css/HomePage.module.css";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Movies />
     </div>
   );
