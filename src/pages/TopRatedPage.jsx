@@ -1,9 +1,8 @@
-import styles from "../css/TopRatedPage.module.css";
 import TopRatedMovies from "../components/TopRatedMovies";
 
 const TopRatedPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <TopRatedMovies />
     </div>
   );
