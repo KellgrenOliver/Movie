@@ -21,7 +21,7 @@ const DetailMovies = () => {
       {data && (
         <div>
           <img
-            src={`https://image.tmdb.org/t/p/w200${data.results.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w300${data.results.poster_path}`}
             alt={data.results.title}
           />
           <h1>{data.results.title}</h1>
