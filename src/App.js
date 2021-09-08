@@ -21,7 +21,6 @@ function App() {
       <Router>
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
-
           <NavbarComponent />
           <Switch>
             <Route exact path="/">

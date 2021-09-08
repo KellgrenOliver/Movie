@@ -26,7 +26,6 @@ const DetailMovies = () => {
             alt={data.results.title}
           />
           <h1>{data.results.title}</h1>
-          <h1>{data.results.with_people}</h1>
           <p>{data.results.overview}</p>
           <p>{data.results.release_date}</p>
         </div>
