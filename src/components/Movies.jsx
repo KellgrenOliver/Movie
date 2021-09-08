@@ -3,6 +3,7 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
 import { getMovies } from "../services/API";
+import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 
 const Movies = () => {
@@ -25,11 +26,13 @@ const Movies = () => {
           {data &&
             data.moviedata.map((movie, i) => (
               <div className={styles.movieCard} key={i}>
-                <img
-                  className={styles.img}
-                  src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                  alt={movie.title}
-                />
+                <Link to={`/movie/${movie.id}`}>
+                  <img
+                    className={styles.img}
+                    src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </Link>
               </div>
             ))}
         </div>
