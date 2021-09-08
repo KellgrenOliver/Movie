@@ -21,6 +21,7 @@ const DetailMovies = () => {
       {data && (
         <div>
           <img
+            className={styles.img}
             src={`https://image.tmdb.org/t/p/w300${data.results.poster_path}`}
             alt={data.results.title}
           />
