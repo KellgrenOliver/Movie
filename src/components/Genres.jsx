@@ -5,7 +5,7 @@ import { getGenres } from "../services/API";
 import styles from "../css/Movie.module.css";
 import { Link } from "react-router-dom";
 
-const Movies = () => {
+const Genres = () => {
   const { data, error, isError, isLoading } = useQuery(["genres"], () => {
     return getGenres();
   });
@@ -36,4 +36,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default Genres;
