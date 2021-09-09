@@ -1,5 +1,4 @@
 import styles from "../css/HomePage.module.css";
-import headerStyles from "../css/Headers.module.css";
 import { useHistory } from "react-router-dom";
 
 const HomePage = () => {
@@ -17,7 +16,6 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* <h1 className={headerStyles.header}>Welcome to Sky Cinema!</h1> */}
       <div className={styles.container}>
         <div
           onClick={() => renderLatest()}

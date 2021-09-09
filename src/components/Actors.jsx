@@ -5,7 +5,6 @@ import { useQuery } from "react-query";
 import { getActorsFromMovie } from "../services/API";
 import styles from "../css/Actors.module.css";
 import { Link } from "react-router-dom";
-import Actor from "./Actor";
 
 const Actors = (movie) => {
   const { data, error, isError, isLoading } = useQuery(["Actors"], () => {
@@ -25,7 +24,6 @@ const Actors = (movie) => {
 
         <h3>ACTORS</h3>
         <div className={styles.imgWrapper}>
-          {console.log(data)}
           {data &&
             data.results.cast.map((cast, i) => (
               <div className={styles.movieCard} key={i}>
