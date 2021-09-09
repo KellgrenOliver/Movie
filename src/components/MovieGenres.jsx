@@ -3,13 +3,18 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
 import { getMoviesByGenre } from "../services/API";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 
 const MoviesGenres = () => {
-  const { data, error, isError, isLoading } = useQuery(["moviegenres"], () => {
-    return getMoviesByGenre(window.location.pathname.split("/")[2]);
-  });
+  const { id } = useParams();
+
+  const { data, error, isError, isLoading } = useQuery(
+    ["moviegenres", id],
+    () => {
+      return getMoviesByGenre(id);
+    }
+  );
 
   return (
     <div>

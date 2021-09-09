@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getMovie } from "../services/API";
 import { useQuery } from "react-query";
 import styles from "../css/DetailPage.module.css";
+import Actors from "./Actors";
 const DetailMovies = () => {
   const { id } = useParams();
   const { data, error, isError, isLoading } = useQuery(["movie", id], () => {
@@ -18,6 +19,7 @@ const DetailMovies = () => {
           <strong>Error:</strong> {error.message}
         </Alert>
       )}
+
       {data && (
         <div>
           <img
@@ -30,6 +32,7 @@ const DetailMovies = () => {
           <p>{data.results.release_date}</p>
         </div>
       )}
+      <Actors id={id} />
     </div>
   );
 };

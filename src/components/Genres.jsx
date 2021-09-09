@@ -25,7 +25,7 @@ const Genres = () => {
           {data &&
             data.results.genres.map((genre, i) => (
               <div className={styles.genres} key={i}>
-                <Link to={`genre/${genre.id}`}>
+                <Link to={`/genre/${genre.id}`}>
                   <p>{genre.name}</p>
                 </Link>
               </div>

@@ -1,4 +1,5 @@
 .container {
+  margin-top: 3rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -7,16 +8,13 @@
   justify-content: center;
 }
 
-.latest {
-  background-image: url("https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C7B0AD12884120F55F5391EF8A487305D78D720B5211CBEBA3B38ACDA6A196AE/scale?width=1200&aspectRatio=1.78&format=jpeg");
+.backgroundImage {
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   width: 50%;
-  filter: brightness(0.5);
   height: 150px;
   border-radius: 10px;
-  font-size: 2rem;
+  font-size: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,42 +22,21 @@
   margin: 2rem;
   padding: 20px;
   color: white;
+  cursor: pointer;
+}
+
+.backgroundImage:hover {
+  filter: brightness(1.5);
+}
+
+.latest {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/002/082/605/original/abstact-red-line-background-overlapped-layers-on-black-background-template-for-your-banner-and-presentation-modern-design-illutration-vector.jpg");
 }
 
 .popular {
-  background-image: url("https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C7B0AD12884120F55F5391EF8A487305D78D720B5211CBEBA3B38ACDA6A196AE/scale?width=1200&aspectRatio=1.78&format=jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 50%;
-  filter: brightness(0.5);
-  height: 150px;
-  border-radius: 10px;
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 2rem;
-  padding: 20px;
-  color: white;
+  background-image: url("https://cdn3.vectorstock.com/i/1000x1000/30/62/black-hexagonal-pattern-on-red-magma-background-vector-32223062.jpg");
 }
 
-.toplist {
-  background-image: url("https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C7B0AD12884120F55F5391EF8A487305D78D720B5211CBEBA3B38ACDA6A196AE/scale?width=1200&aspectRatio=1.78&format=jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 50%;
-  filter: brightness(0.5);
-  height: 150px;
-  border-radius: 10px;
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 2rem;
-  padding: 20px;
-  color: white;
+.topRated {
+  background-image: url("https://wallpaperbat.com/img/255939-black-and-red-wallpaperdownload-free-stunning-background.jpg");
 }

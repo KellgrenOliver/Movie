@@ -10,7 +10,13 @@ const NavbarComponent = () => {
   });
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="light"
+        variant="light"
+        className="p-4"
+      >
         <Container>
           <Navbar.Brand href="/">
             <img
@@ -41,7 +47,7 @@ const NavbarComponent = () => {
                       {data &&
                         data.results.genres.map((genre, i) => (
                           <div key={i}>
-                            <Link to={`genre/${genre.id}`}>
+                            <Link to={`/genre/${genre.id}`}>
                               <p>{genre.name}</p>
                             </Link>
                           </div>
