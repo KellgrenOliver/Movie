@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Alert } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { getGenres } from "../services/API";
+import styles from "../css/Movie.module.css";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
   const { data, error, isError, isLoading } = useQuery(["genres"], () => {
@@ -19,11 +21,13 @@ const Movies = () => {
           </Alert>
         )}
 
-        <div>
+        <div className={styles.genresWrapper}>
           {data &&
-            data.moviedata.map((movie, i) => (
-              <div key={i}>
-                <h1>GOT DATA</h1>
+            data.results.genres.map((genre, i) => (
+              <div className={styles.genres} key={i}>
+                <Link to={`genre/${genre.id}`}>
+                  <p>{genre.name}</p>
+                </Link>
               </div>
             ))}
         </div>

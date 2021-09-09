@@ -24,7 +24,7 @@ const Movies = () => {
 
         <div className={styles.cardWrapper}>
           {data &&
-            data.moviedata.map((movie, i) => (
+            data.results.results.map((movie, i) => (
               <div className={styles.movieCard} key={i}>
                 <Link to={`/movie/${movie.id}`}>
                   <img

@@ -7,7 +7,6 @@ const get = async (endpoint) => {
 
   return {
     results: response.data,
-    moviedata: response.data.results,
   };
 };
 
@@ -25,8 +24,20 @@ export const getGenres = async () => {
   );
 };
 
+export const getLatestMovies = async () => {
+  return await get(
+    `/movie/now_playing?api_key=51695a473e0471ff2582f84f2aaa5cf5`
+  );
+};
+
 export const getMovie = async (id) => {
   return await get(`/movie/${id}?api_key=51695a473e0471ff2582f84f2aaa5cf5`);
+};
+
+export const getMoviesByGenre = async (id) => {
+  return await get(
+    `/discover/movie?api_key=51695a473e0471ff2582f84f2aaa5cf5&with_genres=${id}`
+  );
 };
 
 //eslint-disable-next-line
@@ -35,4 +46,6 @@ export default {
   getTopRatedMovies,
   getGenres,
   getMovie,
+  getMoviesByGenre,
+  getLatestMovies,
 };
