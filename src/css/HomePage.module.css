@@ -1,0 +1,65 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.latest {
+  background-image: url("https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C7B0AD12884120F55F5391EF8A487305D78D720B5211CBEBA3B38ACDA6A196AE/scale?width=1200&aspectRatio=1.78&format=jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 50%;
+  filter: brightness(0.5);
+  height: 150px;
+  border-radius: 10px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2rem;
+  padding: 20px;
+  color: white;
+}
+
+.popular {
+  background-image: url("https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C7B0AD12884120F55F5391EF8A487305D78D720B5211CBEBA3B38ACDA6A196AE/scale?width=1200&aspectRatio=1.78&format=jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 50%;
+  filter: brightness(0.5);
+  height: 150px;
+  border-radius: 10px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2rem;
+  padding: 20px;
+  color: white;
+}
+
+.toplist {
+  background-image: url("https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C7B0AD12884120F55F5391EF8A487305D78D720B5211CBEBA3B38ACDA6A196AE/scale?width=1200&aspectRatio=1.78&format=jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 50%;
+  filter: brightness(0.5);
+  height: 150px;
+  border-radius: 10px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2rem;
+  padding: 20px;
+  color: white;
+}

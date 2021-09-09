@@ -2,14 +2,18 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
-import { getMovies } from "../services/API";
+import { getLatestMovies } from "../services/API";
 import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
+import headerStyles from "../css/Headers.module.css";
 
-const Movies = () => {
-  const { data, error, isError, isLoading } = useQuery(["movies"], () => {
-    return getMovies();
-  });
+const LatestMovies = () => {
+  const { data, error, isError, isLoading } = useQuery(
+    ["getLatestMovies"],
+    () => {
+      return getLatestMovies();
+    }
+  );
 
   return (
     <div>
@@ -22,9 +26,11 @@ const Movies = () => {
           </Alert>
         )}
 
+        <h1 className={headerStyles.header}>LATEST</h1>
+
         <div className={styles.cardWrapper}>
           {data &&
-            data.moviedata.map((movie, i) => (
+            data.results.results.map((movie, i) => (
               <div className={styles.movieCard} key={i}>
                 <Link to={`/movie/${movie.id}`}>
                   <img
@@ -41,4 +47,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default LatestMovies;

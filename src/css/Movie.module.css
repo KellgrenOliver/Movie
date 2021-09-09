@@ -1,6 +1,5 @@
 .cardWrapper {
   width: 100%;
-
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -21,4 +20,18 @@
 
 .img:hover {
   filter: brightness(1.2);
+}
+
+.genresWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genres {
+  margin: 2rem;
+  color: white;
 }

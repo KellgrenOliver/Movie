@@ -2,18 +2,15 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
-import { getTopRatedMovies } from "../services/API";
+import { getMovies } from "../services/API";
 import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const Movies = () => {
-  const { data, error, isError, isLoading } = useQuery(
-    ["topRatedMovies"],
-    () => {
-      return getTopRatedMovies();
-    }
-  );
+  const { data, error, isError, isLoading } = useQuery(["movies"], () => {
+    return getMovies();
+  });
 
   return (
     <div>
@@ -26,7 +23,7 @@ const Movies = () => {
           </Alert>
         )}
 
-        <h1 className={headerStyles.header}>TOP RATED</h1>
+        <h1 className={headerStyles.header}>POPULAR</h1>
 
         <div className={styles.cardWrapper}>
           {data &&

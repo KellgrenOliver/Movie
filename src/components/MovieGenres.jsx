@@ -2,18 +2,14 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
-import { getTopRatedMovies } from "../services/API";
+import { getMoviesByGenre } from "../services/API";
 import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
-import headerStyles from "../css/Headers.module.css";
 
-const Movies = () => {
-  const { data, error, isError, isLoading } = useQuery(
-    ["topRatedMovies"],
-    () => {
-      return getTopRatedMovies();
-    }
-  );
+const MoviesGenres = () => {
+  const { data, error, isError, isLoading } = useQuery(["moviegenres"], () => {
+    return getMoviesByGenre(window.location.pathname.split("/")[2]);
+  });
 
   return (
     <div>
@@ -25,8 +21,6 @@ const Movies = () => {
             <strong>Error:</strong> {error.message}
           </Alert>
         )}
-
-        <h1 className={headerStyles.header}>TOP RATED</h1>
 
         <div className={styles.cardWrapper}>
           {data &&
@@ -47,4 +41,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default MoviesGenres;
