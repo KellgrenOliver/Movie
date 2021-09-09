@@ -41,7 +41,9 @@ export const getActorsFromMovie = async (id) => {
 };
 
 export const getActor = async (id) => {
-  return await get(`/person/${id}?api_key=51695a473e0471ff2582f84f2aaa5cf5`);
+  return await get(
+    `/person/${id}?api_key=51695a473e0471ff2582f84f2aaa5cf5&append_to_response=combined_credits`
+  );
 };
 
 export const getMoviesByGenre = async (id) => {
