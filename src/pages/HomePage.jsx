@@ -23,19 +23,19 @@ const HomePage = () => {
           onClick={() => renderLatest()}
           className={[styles.latest, styles.backgroundImage].join(" ")}
         >
-          GO TO LATEST
+          LATEST
         </div>
         <div
           onClick={() => renderPopular()}
           className={[styles.popular, styles.backgroundImage].join(" ")}
         >
-          GO TO POPULAR
+          POPULAR
         </div>
         <div
           onClick={() => renderTopRated()}
           className={[styles.topRated, styles.backgroundImage].join(" ")}
         >
-          GO TO TOP RATED
+          TOP RATED
         </div>
       </div>
     </div>
