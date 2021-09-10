@@ -35,20 +35,22 @@ const Actor = () => {
             <p>{data.results.biography}</p>
             <h1 className={styles.header}>Involved in</h1>
 
-            {data &&
-              data.results.combined_credits.cast.map((cast, i) => (
-                <div key={i}>
-                  {cast.poster_path && (
-                    <Link to={`/movie/${cast.id}`}>
-                      <img
-                        className={styles.img}
-                        src={`https://image.tmdb.org/t/p/w200${cast.poster_path}`}
-                        alt={cast.title}
-                      />
-                    </Link>
-                  )}
-                </div>
-              ))}
+            <div className={styles.imgWrapper}>
+              {data &&
+                data.results.combined_credits.cast.map((cast, i) => (
+                  <div key={i}>
+                    {cast.poster_path && (
+                      <Link to={`/movie/${cast.id}`}>
+                        <img
+                          className={styles.img}
+                          src={`https://image.tmdb.org/t/p/w200${cast.poster_path}`}
+                          alt={cast.title}
+                        />
+                      </Link>
+                    )}
+                  </div>
+                ))}
+            </div>
           </div>
         )}
       </Container>

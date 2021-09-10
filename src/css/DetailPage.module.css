@@ -8,11 +8,6 @@
 
 .wrapper {
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex: wrap;
   margin: auto;
   margin-top: 8rem;
   width: 90%;
@@ -34,12 +29,7 @@
 }
 
 .table {
-  background-color: rgba(44, 44, 44, 0.9);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   border-radius: 20px;
   padding: 20px;
 }
@@ -60,4 +50,29 @@
 .marginInfo {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    background-color: rgba(44, 44, 44, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex: wrap;
+  }
+  .table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+  }
 }

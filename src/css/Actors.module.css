@@ -1,5 +1,5 @@
 .imgWrapper {
-  width: 100%;
+  width: 150%;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -8,16 +8,18 @@
 }
 
 .img {
-  width: 100px;
+  width: 150px;
   border-radius: 20px;
-  margin: 2rem;
+  margin: 1rem;
   cursor: pointer;
 }
 
 .header {
   text-align: center;
   font-size: 2rem;
-  color: brown;
+  color: rgb(187, 87, 87);
+  text-shadow: 2px 2px #ff0000;
+  margin: 1rem;
 }
 
 .soloContainer {
@@ -38,4 +40,22 @@
 .soloImg {
   width: 300px;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .soloContainer {
+    width: 90%;
+  }
+  .soloImg {
+    width: 250px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .soloContainer {
+    width: 85%;
+  }
+  .soloImg {
+    width: 250px;
+  }
 }
