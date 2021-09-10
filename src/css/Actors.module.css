@@ -1,5 +1,5 @@
 .imgWrapper {
-  width: 150%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -10,7 +10,7 @@
 .img {
   width: 150px;
   border-radius: 20px;
-  margin: 1rem;
+  margin: 1.5rem;
   cursor: pointer;
 }
 
@@ -45,6 +45,10 @@
 @media only screen and (max-width: 600px) {
   .soloContainer {
     width: 90%;
+  }
+  .img {
+    width: 120px;
+    margin: 1rem;
   }
   .soloImg {
     width: 250px;
