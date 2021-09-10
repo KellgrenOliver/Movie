@@ -59,6 +59,10 @@
   .soloContainer {
     width: 85%;
   }
+  .img {
+    width: 140px;
+    margin: 1rem;
+  }
   .soloImg {
     width: 250px;
   }
