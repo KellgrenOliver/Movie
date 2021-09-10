@@ -2,14 +2,14 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
-import { getMovies } from "../services/API";
+import { getPopularMovies } from "../services/API";
 import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const Movies = () => {
   const { data, error, isError, isLoading } = useQuery(["movies"], () => {
-    return getMovies();
+    return getPopularMovies();
   });
 
   return (

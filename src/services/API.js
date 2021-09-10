@@ -10,7 +10,7 @@ const get = async (endpoint) => {
   };
 };
 
-export const getMovies = async () => {
+export const getPopularMovies = async () => {
   return await get(`/movie/popular/?api_key=51695a473e0471ff2582f84f2aaa5cf5`);
 };
 
@@ -46,15 +46,20 @@ export const getActor = async (id) => {
   );
 };
 
-export const getMoviesByGenre = async (id) => {
+export const getMoviesByGenre = async (prop, page = null) => {
   return await get(
-    `/discover/movie/?api_key=51695a473e0471ff2582f84f2aaa5cf5&with_genres=${id}`
+    `/discover/movie/?api_key=51695a473e0471ff2582f84f2aaa5cf5&with_genres=${prop}&page=${page}`
   );
+};
+
+export const getPosts = async (prop, page = null) => {
+  const endpoint = `${prop}?page=${page}`;
+  return get(endpoint);
 };
 
 //eslint-disable-next-line
 export default {
-  getMovies,
+  getPopularMovies,
   getTopRatedMovies,
   getGenres,
   getMovie,
@@ -62,4 +67,5 @@ export default {
   getLatestMovies,
   getActorsFromMovie,
   getActor,
+  getPosts,
 };
