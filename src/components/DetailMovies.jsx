@@ -29,7 +29,7 @@ const DetailMovies = () => {
               alt={data.results.title}
             />
             <h1 className={styles.header}>{data.results.title}</h1>
-            <p>{data.results.overview}</p>
+            <b>{data.results.overview}</b>
             {data &&
               data.results.genres.map((genre, i) => (
                 <div key={i}>

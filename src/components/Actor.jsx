@@ -32,7 +32,7 @@ const Actor = () => {
               alt={data.results.name}
             />
             <h1 className={styles.header}>{data.results.name}</h1>
-            <p>{data.results.biography}</p>
+            <b>{data.results.biography}</b>
             <h1 className={styles.header}>Involved in</h1>
 
             <div className={styles.imgWrapper}>
