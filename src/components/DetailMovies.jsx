@@ -23,64 +23,27 @@ const DetailMovies = () => {
       {data && (
         <div className={styles.container}>
           <div className={styles.wrapper}>
-            <Table bordered className={styles.table}>
-              <img
-                className={styles.img}
-                src={`https://image.tmdb.org/t/p/w300${data.results.poster_path}`}
-                alt={data.results.title}
-              />
-              <tbody>
-                <h1 className={styles.header}>{data.results.title}</h1>
-                <tr>
-                  <td>Overview</td>
-                  <td>
-                    <p>{data.results.overview}</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Genres</td>
-                  <td>
-                    <p>
-                      <div className={styles.flex}>
-                        {data &&
-                          data.results.genres.map((genre, i) => (
-                            <div key={i}>
-                              <p className={styles.marginInfo}>{genre.name}</p>
-                            </div>
-                          ))}
-                      </div>
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Language</td>
-                  <td>
-                    <div className={styles.flex}>
-                      {data &&
-                        data.results.spoken_languages.map((language, i) => (
-                          <div key={i}>
-                            <p className={styles.marginInfo}>
-                              {language.name}{" "}
-                            </p>
-                          </div>
-                        ))}
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Time</td>
-                  <td>
-                    <p>{data.results.runtime} min</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Release date</td>
-                  <td>
-                    <p>{data.results.release_date}</p>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
+            <img
+              className={styles.img}
+              src={`https://image.tmdb.org/t/p/w300${data.results.poster_path}`}
+              alt={data.results.title}
+            />
+            <h1 className={styles.header}>{data.results.title}</h1>
+            <p>{data.results.overview}</p>
+            {data &&
+              data.results.genres.map((genre, i) => (
+                <div key={i}>
+                  <p className={styles.marginInfo}>{genre.name}</p>
+                </div>
+              ))}
+            {data &&
+              data.results.spoken_languages.map((language, i) => (
+                <div key={i}>
+                  <p className={styles.marginInfo}>{language.name} </p>
+                </div>
+              ))}
+            <p>{data.results.runtime} min</p>
+            <p>{data.results.release_date}</p>
           </div>
           <Actors id={id} />
         </div>
