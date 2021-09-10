@@ -16,6 +16,7 @@ const NavbarComponent = () => {
         bg="light"
         variant="light"
         className="p-4"
+        fixed="top"
       >
         <Container>
           <Navbar.Brand href="/">

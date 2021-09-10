@@ -1,21 +1,16 @@
 import React from "react";
-import Alert from "react-bootstrap/Alert";
-import Container from "react-bootstrap/Container";
+import { Container, Alert } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { getActor } from "../services/API";
 import styles from "../css/Actors.module.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Actor = () => {
   const { id } = useParams();
 
-  console.log(id);
-
   const { data, error, isError, isLoading } = useQuery(["person", id], () => {
     return getActor(id);
   });
-
-  console.log(data);
 
   return (
     <div>
@@ -30,12 +25,30 @@ const Actor = () => {
 
         <h3>ACTOR</h3>
         {data && (
-          <div className={styles.imgWrapper}>
+          <div className={styles.soloContainer}>
             <img
-              className={styles.img}
+              className={styles.soloImg}
               src={`https://image.tmdb.org/t/p/w300${data.results.profile_path}`}
               alt={data.results.name}
             />
+            <h1 className={styles.header}>{data.results.name}</h1>
+            <p>{data.results.biography}</p>
+            <h1 className={styles.header}>Involved in</h1>
+
+            {data &&
+              data.results.combined_credits.cast.map((cast, i) => (
+                <div key={i}>
+                  {cast.poster_path && (
+                    <Link to={`/movie/${cast.id}`}>
+                      <img
+                        className={styles.img}
+                        src={`https://image.tmdb.org/t/p/w200${cast.poster_path}`}
+                        alt={cast.title}
+                      />
+                    </Link>
+                  )}
+                </div>
+              ))}
           </div>
         )}
       </Container>

@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { getMoviesByGenre } from "../services/API";
 import { Link, useParams } from "react-router-dom";
 import styles from "../css/Movie.module.css";
+import headerStyles from "../css/Headers.module.css";
 
 const MoviesGenres = () => {
   const { id } = useParams();
@@ -26,6 +27,8 @@ const MoviesGenres = () => {
             <strong>Error:</strong> {error.message}
           </Alert>
         )}
+
+        <h1 className={headerStyles.header}>GENRE?</h1>
 
         <div className={styles.cardWrapper}>
           {data &&

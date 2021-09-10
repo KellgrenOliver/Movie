@@ -1,6 +1,13 @@
 .header {
+  padding-top: 6rem;
   color: white;
   text-align: center;
   margin: auto;
   font-size: 6rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 4rem;
+  }
 }

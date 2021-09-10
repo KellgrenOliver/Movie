@@ -22,18 +22,20 @@ const Actors = (movie) => {
           </Alert>
         )}
 
-        <h3>ACTORS</h3>
+        <h3 className={styles.header}>ACTORS</h3>
         <div className={styles.imgWrapper}>
           {data &&
             data.results.cast.map((cast, i) => (
-              <div className={styles.movieCard} key={i}>
+              <div key={i}>
                 {cast.profile_path && (
                   <Link to={`/actor/${cast.id}`}>
-                    <img
-                      className={styles.img}
-                      src={`https://image.tmdb.org/t/p/w300${cast.profile_path}`}
-                      alt={cast.name}
-                    />
+                    <div className={styles.cardImg}>
+                      <img
+                        className={styles.img}
+                        src={`https://image.tmdb.org/t/p/w300${cast.profile_path}`}
+                        alt={cast.name}
+                      />
+                    </div>
                   </Link>
                 )}
               </div>

@@ -1,8 +1,63 @@
 .container {
+  width: 100%;
   color: white;
-  margin: 5rem;
+  margin: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wrapper {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex: wrap;
+  margin: auto;
+  margin-top: 8rem;
+  width: 90%;
 }
 
 .img {
   border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.info {
+  color: white;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.table {
+  background-color: rgba(44, 44, 44, 0.9);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.header {
+  font-size: 3rem;
+  text-align: center;
+  color: brown;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.marginInfo {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
