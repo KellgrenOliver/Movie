@@ -3,7 +3,7 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
 import { getActorsFromMovie } from "../services/API";
-import styles from "../css/Actors.module.css";
+import styles from "../css/Details.module.css";
 import { Link } from "react-router-dom";
 
 const Actors = (movie) => {

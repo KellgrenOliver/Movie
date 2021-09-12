@@ -1,6 +1,7 @@
 .header {
+  color: #f3aa34;
+  text-shadow: 5px 5px #000000;
   padding-top: 6rem;
-  color: white;
   text-align: center;
   margin: auto;
   font-size: 6rem;

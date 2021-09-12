@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Alert } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { getActor } from "../services/API";
-import styles from "../css/Actors.module.css";
+import styles from "../css/Details.module.css";
 import { useParams, Link } from "react-router-dom";
 
 const Actor = () => {
@@ -23,9 +23,8 @@ const Actor = () => {
           </Alert>
         )}
 
-        <h3>ACTOR</h3>
         {data && (
-          <div className={styles.soloContainer}>
+          <div className={styles.container}>
             <img
               className={styles.soloImg}
               src={`https://image.tmdb.org/t/p/w300${data.results.profile_path}`}

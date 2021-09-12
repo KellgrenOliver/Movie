@@ -21,7 +21,8 @@
   text-align: center;
   margin: 2rem;
   padding: 20px;
-  color: white;
+  color: #f3aa34;
+  text-shadow: 3px 3px #000000;
   cursor: pointer;
 }
 

@@ -1,9 +1,9 @@
 import React from "react";
-import { Alert, Table } from "react-bootstrap";
+import { Container, Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getMovie } from "../services/API";
 import { useQuery } from "react-query";
-import styles from "../css/DetailPage.module.css";
+import styles from "../css/Details.module.css";
 import Actors from "./Actors";
 const DetailMovies = () => {
   const { id } = useParams();
@@ -12,7 +12,7 @@ const DetailMovies = () => {
   });
 
   return (
-    <div className={styles.container}>
+    <Container className="py-3">
       {isLoading && <p className="my-3">Loading...</p>}
       {isError && (
         <Alert variant="warning" className="my-3">
@@ -22,33 +22,34 @@ const DetailMovies = () => {
 
       {data && (
         <div className={styles.container}>
-          <div className={styles.wrapper}>
-            <img
-              className={styles.img}
-              src={`https://image.tmdb.org/t/p/w300${data.results.poster_path}`}
-              alt={data.results.title}
-            />
-            <h1 className={styles.header}>{data.results.title}</h1>
-            <b>{data.results.overview}</b>
+          <img
+            className={styles.soloImg}
+            src={`https://image.tmdb.org/t/p/w300${data.results.poster_path}`}
+            alt={data.results.title}
+          />
+          <h1 className={styles.header}>{data.results.title}</h1>
+          <b>{data.results.overview}</b>
+          <div className={styles.info}>
             {data &&
               data.results.genres.map((genre, i) => (
                 <div key={i}>
                   <p className={styles.marginInfo}>{genre.name}</p>
                 </div>
               ))}
+
             {data &&
               data.results.spoken_languages.map((language, i) => (
                 <div key={i}>
                   <p className={styles.marginInfo}>{language.name} </p>
                 </div>
               ))}
-            <p>{data.results.runtime} min</p>
-            <p>{data.results.release_date}</p>
+            <p className={styles.marginInfo}>{data.results.runtime} min</p>
+            <p className={styles.marginInfo}>{data.results.release_date}</p>
           </div>
           <Actors id={id} />
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 
