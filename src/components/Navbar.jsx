@@ -21,7 +21,7 @@ const NavbarComponent = () => {
         <Container>
           <Navbar.Brand href="/">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Sky_Cinema_-_Logo_2020.svg/1200px-Sky_Cinema_-_Logo_2020.svg.png"
+              src="https://www.freelogovectors.net/wp-content/uploads/2021/08/tiger-logo-freelogovectors.net_.png"
               alt="logo"
               width="150"
               height="30"
