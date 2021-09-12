@@ -1,0 +1,56 @@
+.cardWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movieCard {
+  color: white;
+  font-size: 0.5rem;
+  margin: 1.8rem;
+  cursor: pointer;
+}
+
+.img {
+  border-radius: 10px;
+}
+
+.img:hover {
+  filter: brightness(1.2);
+}
+
+.genresWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genres {
+  margin: 2rem;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .img {
+    width: 130px;
+    margin: 0.5rem;
+  }
+  .movieCard {
+    margin: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .img {
+    width: 200px;
+  }
+  .movieCard {
+    margin: 1rem;
+  }
+}

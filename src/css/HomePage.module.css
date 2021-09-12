@@ -1,0 +1,66 @@
+.container {
+  margin-top: 8.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.backgroundImage {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 150px;
+  border-radius: 10px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2rem;
+  padding: 20px;
+  color: #f3aa34;
+  text-shadow: 3px 3px #000000;
+  cursor: pointer;
+}
+
+.backgroundImage:hover {
+  filter: brightness(1.5);
+}
+
+.latest {
+  background-image: url("https://wallpaperaccess.com/full/473027.jpg");
+}
+
+.popular {
+  background-image: url("https://i.pinimg.com/originals/d3/45/7a/d3457a7917ddaa50030e3f2ed8d3ec5e.jpg");
+}
+
+.topRated {
+  background-image: url("https://wallpaperaccess.com/full/473028.jpg");
+}
+
+@media only screen and (max-width: 600px) {
+  .backgroundImage {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+  }
+  .container {
+    margin-top: 8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .backgroundImage {
+    width: 70%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container {
+    margin-top: 14rem;
+  }
+}
