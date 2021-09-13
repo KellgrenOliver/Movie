@@ -48,7 +48,7 @@ const NavbarComponent = () => {
                       {data &&
                         data.results.genres.map((genre, i) => (
                           <div key={i}>
-                            <Link to={`/genre/${genre.id}`}>
+                            <Link to={`/genre/${genre.name}/${genre.id}`}>
                               <p>{genre.name}</p>
                             </Link>
                           </div>

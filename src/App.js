@@ -46,7 +46,7 @@ function App() {
             <Route exact path="/popular">
               <PopularPage />
             </Route>
-            <Route exact path="/genre/:id">
+            <Route exact path="/genre/:name/:id">
               <GenresPage />
             </Route>
           </Switch>
