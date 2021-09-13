@@ -56,25 +56,32 @@ const MoviesGenres = () => {
               </div>
             ))}
         </div>
-        <Button
-          onClick={() => setPage((currentPage) => Math.max(currentPage - 1, 1))}
-          disabled={page === 1}
-        >
-          Previous Page
-        </Button>
-        <span>Current Page: {page}</span>
 
-        <Button
-          onClick={() => {
-            if (!isPreviousData && data.results.page) {
-              setPage((currentPage) => currentPage + 1);
-            }
-          }}
-          // Disable the Next Page button until we know a next page is available
-          disabled={isPreviousData || page === 500}
-        >
-          Next Page
-        </Button>
+        {data && (
+          <div>
+            <Button
+              onClick={() =>
+                setPage((currentPage) => Math.max(currentPage - 1, 1))
+              }
+              disabled={page === 1}
+            >
+              Previous Page
+            </Button>
+            <span>Current Page: {page}</span>
+
+            <Button
+              onClick={() => {
+                if (!isPreviousData && data.results.page) {
+                  setPage((currentPage) => currentPage + 1);
+                }
+              }}
+              // Disable the Next Page button until we know a next page is available
+              disabled={isPreviousData || page === 500}
+            >
+              Next Page
+            </Button>
+          </div>
+        )}
       </Container>
     </div>
   );

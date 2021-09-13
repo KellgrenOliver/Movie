@@ -3,6 +3,7 @@ import { Container, Nav, Navbar, NavDropdown, Alert } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { getGenres } from "../services/API";
 import { Link } from "react-router-dom";
+import styles from "../css/Navbar.module.css";
 
 const NavbarComponent = () => {
   const { data, error, isError, isLoading } = useQuery(
@@ -24,6 +25,7 @@ const NavbarComponent = () => {
         <Container>
           <Navbar.Brand href="/">
             <img
+              // className={styles.logo}
               src="https://www.freelogovectors.net/wp-content/uploads/2021/08/tiger-logo-freelogovectors.net_.png"
               alt="logo"
               width="150"
@@ -37,8 +39,8 @@ const NavbarComponent = () => {
               <Nav.Link href="/popular">Popular</Nav.Link>
               <Nav.Link href="/toprated">Top Rated</Nav.Link>
               <NavDropdown title="Genres" id="basic-nav-dropdown">
-                <NavDropdown.Item>
-                  <Container className="py-3">
+                <NavDropdown.Item className={styles.dropdownItem}>
+                  <Container>
                     {isLoading && <p className="my-3">Loading...</p>}
 
                     {isError && (
