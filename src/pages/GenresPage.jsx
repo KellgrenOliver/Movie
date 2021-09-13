@@ -1,9 +1,9 @@
-import MovieGenres from "../components/MovieGenres";
+import MovieFromGenres from "../components/MoviesFromGenre";
 
 const HomePage = () => {
   return (
     <div>
-      <MovieGenres />
+      <MovieFromGenres />
     </div>
   );
 };

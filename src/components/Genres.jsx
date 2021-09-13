@@ -6,7 +6,7 @@ import styles from "../css/Movie.module.css";
 import { Link } from "react-router-dom";
 
 const Genres = () => {
-  const { data, error, isError, isLoading } = useQuery(["genres"], () => {
+  const { data, error, isError, isLoading } = useQuery(["Genres"], () => {
     return getGenres();
   });
 

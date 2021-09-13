@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import { useQuery } from "react-query";
-import { getMoviesByGenre } from "../services/API";
+import { getPages } from "../services/PaginationAPI";
 import { Link, useParams } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
@@ -11,12 +11,12 @@ import headerStyles from "../css/Headers.module.css";
 const MoviesGenres = () => {
   const [page, setPage] = useState(1);
 
-  const { id } = useParams();
+  const { id, name } = useParams();
 
   const { data, error, isError, isLoading, isPreviousData } = useQuery(
-    [`moviegenres${id}`, page],
+    [`MoviesFromGenre${id}`, page],
     () => {
-      return getMoviesByGenre(id, page);
+      return getPages(id, page);
     }
   );
 
@@ -39,7 +39,8 @@ const MoviesGenres = () => {
             <strong>Error:</strong> {error.message}
           </Alert>
         )}
-        <h1 className={headerStyles.header}>GENRE?</h1>
+
+        {data && <h1 className={headerStyles.header}>{name.toUpperCase()}</h1>}
 
         <div className={styles.cardWrapper}>
           {data &&
@@ -55,25 +56,32 @@ const MoviesGenres = () => {
               </div>
             ))}
         </div>
-        <Button
-          onClick={() => setPage((currentPage) => Math.max(currentPage - 1, 1))}
-          disabled={page === 1}
-        >
-          Previous Page
-        </Button>
-        <span>Current Page: {page}</span>
 
-        <Button
-          onClick={() => {
-            if (!isPreviousData && data.results.next) {
-              setPage((currentPage) => currentPage + 1);
-            }
-          }}
-          // Disable the Next Page button until we know a next page is available
-          disabled={isPreviousData || !data?.results.next}
-        >
-          Next Page
-        </Button>
+        {data && (
+          <div>
+            <Button
+              onClick={() =>
+                setPage((currentPage) => Math.max(currentPage - 1, 1))
+              }
+              disabled={page === 1}
+            >
+              Previous Page
+            </Button>
+            <span>Current Page: {page}</span>
+
+            <Button
+              onClick={() => {
+                if (!isPreviousData && data.results.page) {
+                  setPage((currentPage) => currentPage + 1);
+                }
+              }}
+              // Disable the Next Page button until we know a next page is available
+              disabled={isPreviousData || page === 500}
+            >
+              Next Page
+            </Button>
+          </div>
+        )}
       </Container>
     </div>
   );

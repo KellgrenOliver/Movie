@@ -1,9 +1,9 @@
-import LatestMovies from "../components/LatestMovies";
+import NowPlayingMovies from "../components/NowPlayingMovies";
 
 const TopRatedPage = () => {
   return (
     <div>
-      <LatestMovies />
+      <NowPlayingMovies />
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { useParams, Link } from "react-router-dom";
 const Actor = () => {
   const { id } = useParams();
 
-  const { data, error, isError, isLoading } = useQuery(["person", id], () => {
+  const { data, error, isError, isLoading } = useQuery(["Actor", id], () => {
     return getActor(id);
   });
 

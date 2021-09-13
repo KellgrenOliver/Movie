@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 const HomePage = () => {
   const history = useHistory();
 
-  const renderLatest = () => {
-    history.push("/latest");
+  const renderNowPlaying = () => {
+    history.push("/nowplaying");
   };
   const renderPopular = () => {
     history.push("/popular");
@@ -18,10 +18,10 @@ const HomePage = () => {
     <div>
       <div className={styles.container}>
         <div
-          onClick={() => renderLatest()}
-          className={[styles.latest, styles.backgroundImage].join(" ")}
+          onClick={() => renderNowPlaying()}
+          className={[styles.nowplaying, styles.backgroundImage].join(" ")}
         >
-          LATEST
+          NOW PLAYING
         </div>
         <div
           onClick={() => renderPopular()}
