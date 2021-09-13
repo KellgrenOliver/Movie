@@ -2,18 +2,15 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
-import { getLatestMovies } from "../services/API";
+import { getNowPlayingMovies } from "../services/API";
 import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const LatestMovies = () => {
-  const { data, error, isError, isLoading } = useQuery(
-    ["getLatestMovies"],
-    () => {
-      return getLatestMovies();
-    }
-  );
+  const { data, error, isError, isLoading } = useQuery(["NowPlaying"], () => {
+    return getNowPlayingMovies();
+  });
 
   return (
     <div>
@@ -26,7 +23,7 @@ const LatestMovies = () => {
           </Alert>
         )}
 
-        <h1 className={headerStyles.header}>LATEST</h1>
+        <h1 className={headerStyles.header}>NOW PLAYING</h1>
 
         <div className={styles.cardWrapper}>
           {data &&

@@ -7,7 +7,7 @@ import styles from "../css/Details.module.css";
 import Actors from "./Actors";
 const DetailMovies = () => {
   const { id } = useParams();
-  const { data, error, isError, isLoading } = useQuery(["movie", id], () => {
+  const { data, error, isError, isLoading } = useQuery(["Movie", id], () => {
     return getMovie(id);
   });
 

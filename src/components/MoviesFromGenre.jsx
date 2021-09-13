@@ -14,7 +14,7 @@ const MoviesGenres = () => {
   const { id, name } = useParams();
 
   const { data, error, isError, isLoading, isPreviousData } = useQuery(
-    [`moviegenres${id}`, page],
+    [`MoviesFromGenre${id}`, page],
     () => {
       return getPages(id, page);
     }

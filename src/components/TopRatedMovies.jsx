@@ -8,12 +8,9 @@ import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const Movies = () => {
-  const { data, error, isError, isLoading } = useQuery(
-    ["topRatedMovies"],
-    () => {
-      return getTopRatedMovies();
-    }
-  );
+  const { data, error, isError, isLoading } = useQuery(["TopRated"], () => {
+    return getTopRatedMovies();
+  });
 
   return (
     <div>

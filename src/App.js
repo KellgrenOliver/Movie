@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import TopRatedPage from "./pages/TopRatedPage";
 import GenresPage from "./pages/GenresPage";
-import LatestPage from "./pages/LatestPage";
+import NowPlayingPage from "./pages/NowPlayingPage";
 import PopularPage from "./pages/PopularPage";
 import ActorPage from "./pages/ActorPage";
 import NavbarComponent from "./components/Navbar";
@@ -40,8 +40,8 @@ function App() {
             <Route exact path="/toprated">
               <TopRatedPage />
             </Route>
-            <Route exact path="/latest">
-              <LatestPage />
+            <Route exact path="/nowplaying">
+              <NowPlayingPage />
             </Route>
             <Route exact path="/popular">
               <PopularPage />

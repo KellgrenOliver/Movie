@@ -24,7 +24,7 @@ export const getGenres = async () => {
   );
 };
 
-export const getLatestMovies = async () => {
+export const getNowPlayingMovies = async () => {
   return await get(
     `/movie/now_playing?api_key=51695a473e0471ff2582f84f2aaa5cf5`
   );
@@ -64,7 +64,7 @@ export default {
   getGenres,
   getMovie,
   // getMoviesByGenre,
-  getLatestMovies,
+  getNowPlayingMovies,
   getActorsFromMovie,
   getActor,
   // getPages,
