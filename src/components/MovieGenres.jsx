@@ -40,7 +40,7 @@ const MoviesGenres = () => {
           </Alert>
         )}
 
-        {data && <h1 className={headerStyles.header}>{name}</h1>}
+        {data && <h1 className={headerStyles.header}>{name.toUpperCase()}</h1>}
 
         <div className={styles.cardWrapper}>
           {data &&
