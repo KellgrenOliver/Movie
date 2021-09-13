@@ -25,7 +25,6 @@ const NavbarComponent = () => {
         <Container>
           <Navbar.Brand href="/">
             <img
-              // className={styles.logo}
               src="https://www.freelogovectors.net/wp-content/uploads/2021/08/tiger-logo-freelogovectors.net_.png"
               alt="logo"
               width="150"

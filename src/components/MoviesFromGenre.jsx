@@ -20,11 +20,6 @@ const MoviesGenres = () => {
     }
   );
 
-  // const { data, error, isError, isLoading, isPreviousData } = useQuery(
-  //   [`moviegenres${id}`, page],
-  //   () => getMoviesByGenre(`moviegenres${id}`, page)
-  // );
-
   useEffect(() => {
     console.log(data);
   }, [data]);
@@ -75,7 +70,6 @@ const MoviesGenres = () => {
                   setPage((currentPage) => currentPage + 1);
                 }
               }}
-              // Disable the Next Page button until we know a next page is available
               disabled={isPreviousData || page === 500}
             >
               Next Page
