@@ -1,3 +1,12 @@
+.introHeader {
+  color: #f3aa34;
+  text-shadow: 5px 5px #000000;
+  text-align: center;
+  margin: auto;
+  font-size: 6rem;
+  margin-top: 7rem;
+}
+
 .header {
   color: #f3aa34;
   text-shadow: 5px 5px #000000;
@@ -8,6 +17,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .introHeader {
+    font-size: 3rem;
+  }
   .header {
     font-size: 4rem;
   }
