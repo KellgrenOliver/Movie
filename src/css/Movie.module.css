@@ -1,3 +1,7 @@
+*:focus {
+  outline: none;
+}
+
 .cardWrapper {
   width: 100%;
   display: flex;
@@ -64,6 +68,19 @@
   color: white;
 }
 
+.searchbar {
+  text-align: center;
+  width: 50%;
+  height: 50px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
 @media only screen and (max-width: 600px) {
   .img {
     width: 130px;
@@ -78,6 +95,9 @@
   .cardWrapper {
     margin-bottom: 5rem;
   }
+  .searchbar {
+    width: 90%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -86,5 +106,8 @@
   }
   .movieCard {
     margin: 1rem;
+  }
+  .searchbar {
+    width: 80%;
   }
 }

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 
 const MoviesGenres = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("welcome");
 
   const { data } = useQuery([`Search`, search], () => {
     return getSearch(search);
@@ -16,6 +16,7 @@ const MoviesGenres = () => {
     <div>
       <Container className="py-3">
         <input
+          className={styles.searchbar}
           type="text"
           placeholder="Search..."
           onChange={(e) => {
