@@ -11,7 +11,7 @@ const get = async (endpoint) => {
 };
 
 export const getPopularMovies = async () => {
-  return await get(`/movie/popular/?api_key=51695a473e0471ff2582f84f2aaa5cf5`);
+  return await get(`/movie/popular?api_key=51695a473e0471ff2582f84f2aaa5cf5`);
 };
 
 export const getTopRatedMovies = async () => {

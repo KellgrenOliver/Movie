@@ -20,11 +20,6 @@ const MoviesGenres = () => {
     }
   );
 
-  // const { data, error, isError, isLoading, isPreviousData } = useQuery(
-  //   [`moviegenres${id}`, page],
-  //   () => getMoviesByGenre(`moviegenres${id}`, page)
-  // );
-
   useEffect(() => {
     console.log(data);
   }, [data]);
@@ -60,6 +55,7 @@ const MoviesGenres = () => {
         {data && (
           <div>
             <Button
+              className={styles.button}
               onClick={() =>
                 setPage((currentPage) => Math.max(currentPage - 1, 1))
               }
@@ -70,12 +66,12 @@ const MoviesGenres = () => {
             <span>Current Page: {page}</span>
 
             <Button
+              className={styles.button}
               onClick={() => {
                 if (!isPreviousData && data.results.page) {
                   setPage((currentPage) => currentPage + 1);
                 }
               }}
-              // Disable the Next Page button until we know a next page is available
               disabled={isPreviousData || page === 500}
             >
               Next Page

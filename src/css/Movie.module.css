@@ -31,6 +31,10 @@
   justify-content: center;
 }
 
+.button {
+  background-color: #f3aa34;
+}
+
 .genres {
   margin: 2rem;
   color: white;
