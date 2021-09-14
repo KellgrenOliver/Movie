@@ -53,7 +53,7 @@ const MoviesGenres = () => {
         </div>
 
         {data && (
-          <div>
+          <div className={styles.pagination}>
             <Button
               className={styles.button}
               onClick={() =>
@@ -61,9 +61,9 @@ const MoviesGenres = () => {
               }
               disabled={page === 1}
             >
-              Previous Page
+              Back
             </Button>
-            <span>Current Page: {page}</span>
+            <span className={styles.currentPage}>Current Page: {page}</span>
 
             <Button
               className={styles.button}
@@ -74,7 +74,7 @@ const MoviesGenres = () => {
               }}
               disabled={isPreviousData || page === 500}
             >
-              Next Page
+              Next
             </Button>
           </div>
         )}

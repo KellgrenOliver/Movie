@@ -31,7 +31,31 @@
   justify-content: center;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.currentPage {
+  color: white;
+  margin: 2rem;
+}
+
+.button:disabled {
+  background-color: #f3aa34;
+  color: black;
+}
+
 .button {
+  background-color: #f3aa34;
+  border: none;
+  color: black;
+}
+
+.button:hover {
+  color: black;
   background-color: #f3aa34;
 }
 
