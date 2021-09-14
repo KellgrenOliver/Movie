@@ -55,6 +55,7 @@ const MoviesGenres = () => {
         {data && (
           <div>
             <Button
+              className={styles.button}
               onClick={() =>
                 setPage((currentPage) => Math.max(currentPage - 1, 1))
               }
@@ -65,6 +66,7 @@ const MoviesGenres = () => {
             <span>Current Page: {page}</span>
 
             <Button
+              className={styles.button}
               onClick={() => {
                 if (!isPreviousData && data.results.page) {
                   setPage((currentPage) => currentPage + 1);
