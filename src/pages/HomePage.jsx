@@ -1,5 +1,6 @@
 import styles from "../css/HomePage.module.css";
 import { useHistory } from "react-router-dom";
+import Search from "../components/Search";
 
 const HomePage = () => {
   const history = useHistory();
@@ -17,6 +18,7 @@ const HomePage = () => {
   return (
     <div>
       <div className={styles.container}>
+        <Search />
         <div
           onClick={() => renderNowPlaying()}
           className={[styles.nowplaying, styles.backgroundImage].join(" ")}
