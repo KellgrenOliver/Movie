@@ -5,7 +5,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 6rem;
 }
 
 .movieCard {
@@ -72,6 +71,12 @@
   }
   .movieCard {
     margin: 0.5rem;
+  }
+  .pagination {
+    margin-bottom: 6rem;
+  }
+  .cardWrapper {
+    margin-bottom: 5rem;
   }
 }
 
