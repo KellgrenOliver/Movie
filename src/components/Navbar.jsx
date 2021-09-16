@@ -2,10 +2,11 @@ import React from "react";
 import { Container, Nav, Navbar, NavDropdown, Alert } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { getGenres } from "../services/API";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styles from "../css/Navbar.module.css";
 
 const NavbarComponent = () => {
+  const history = useHistory();
   // Gets data etc from useQuery
   const { data, error, isError, isLoading } = useQuery(
     ["GenresFromNavbar"],
@@ -58,7 +59,7 @@ const NavbarComponent = () => {
                     {data &&
                       data.results.genres.map((genre, i) => (
                         <div key={i}>
-                          <Link to={`/genre/${genre.name}/${genre.id}`}>
+                          <Link to={`/genre/${genre.name}/${genre.id}/1`}>
                             <p>{genre.name}</p>
                           </Link>
                         </div>

@@ -13,7 +13,7 @@ const get = async (endpoint) => {
 };
 
 // Endpoint to get all pages from a genre
-export const getPages = async (prop, page = null) => {
+export const getPages = async (prop, page = 1) => {
   const endpoint = `${prop}&page=${page}`;
   return get(endpoint);
 };

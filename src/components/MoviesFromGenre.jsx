@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
 import { useQuery } from "react-query";
 import { getPages } from "../services/PaginationAPI";
 import { Link, useParams } from "react-router-dom";
@@ -9,13 +8,11 @@ import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const MoviesGenres = () => {
-  // Using useState to set page value to 1
-  const [page, setPage] = useState(1);
-  // Gets id and name from params
-  const { id, name } = useParams();
+  // Gets id, name and page from params
+  let { id, name, page } = useParams();
 
   // Gets data etc from useQuery
-  const { data, error, isError, isLoading, isPreviousData } = useQuery(
+  const { data, error, isError, isLoading } = useQuery(
     [`MoviesFromGenre${id}`, page],
     () => {
       return getPages(id, page);
@@ -55,32 +52,25 @@ const MoviesGenres = () => {
         {/* If there are any data return pagination */}
         {data && (
           <div className={styles.pagination}>
-            {/* Makes a button onClick, when you click you set the value of page to -1. 
-          The button dosen't work when you are at page 1 */}
-            <Button
-              className={styles.button}
-              onClick={() =>
-                setPage((currentPage) => Math.max(currentPage - 1, 1))
-              }
-              disabled={page === 1}
-            >
-              Back
-            </Button>
-            {/* Writes out the current page */}
+            {/* Don't show the previous link on the first page*/}
+            {parseInt(page) !== 1 && (
+              <Link
+                className={styles.button}
+                to={`/genre/${name}/${id}/${parseInt(page) - 1}`}
+              >
+                Previous
+              </Link>
+            )}
             <span className={styles.currentPage}>Current Page: {page}</span>
-            {/* Makes a button onClick, when you click you set the value of page to +1. 
-          The button dosen't work when you are at page 500 */}
-            <Button
-              className={styles.button}
-              onClick={() => {
-                if (!isPreviousData && data.results.page) {
-                  setPage((currentPage) => currentPage + 1);
-                }
-              }}
-              disabled={isPreviousData || page === 500}
-            >
-              Next
-            </Button>
+            {/* Don't show the next link on the last page (500) */}
+            {parseInt(page) !== 500 && (
+              <Link
+                className={styles.button}
+                to={`/genre/${name}/${id}/${parseInt(page) + 1}`}
+              >
+                Next
+              </Link>
+            )}
           </div>
         )}
       </Container>

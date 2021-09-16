@@ -22,16 +22,16 @@ const Genres = () => {
           </Alert>
         )}
         {/* If there are any data the map out the genres */}
-        <div className={styles.genresWrapper}>
+        {/* <div className={styles.genresWrapper}>
           {data &&
             data.results.genres.map((genre, i) => (
               <div className={styles.genres} key={i}>
-                <Link to={`/genre/${genre.id}`}>
+                <Link to={`/genre/${genre.name}/${genre.id}/1`}>
                   <p>{genre.name}</p>
                 </Link>
               </div>
             ))}
-        </div>
+        </div> */}
       </Container>
     </div>
   );
