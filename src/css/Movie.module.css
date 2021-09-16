@@ -9,7 +9,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 5rem;
 }
 
 .movieCard {
@@ -91,11 +90,11 @@
     width: 200px;
     margin: 0.5rem;
   }
-  .cardWrapper {
-    margin-bottom: 5rem;
-  }
   .searchbar {
     width: 50%;
+  }
+  .pagination {
+    margin-bottom: 0rem;
   }
 }
 

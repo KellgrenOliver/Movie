@@ -6,8 +6,10 @@ import styles from "../css/Details.module.css";
 import { useParams, Link } from "react-router-dom";
 
 const Actor = () => {
+  // Gets id form params
   const { id } = useParams();
 
+  // Gets data etc from useQuery
   const { data, error, isError, isLoading } = useQuery(["Actor", id], () => {
     return getActor(id);
   });
@@ -22,19 +24,21 @@ const Actor = () => {
             <strong>Error:</strong> {error.message}
           </Alert>
         )}
-
+        {/* If there is any data return data */}
         {data && (
           <div className={styles.container}>
+            {/* Return a img of the actor */}
             <img
               className={styles.soloImg}
               src={`https://image.tmdb.org/t/p/w300${data.results.profile_path}`}
               alt={data.results.name}
             />
+            {/* Return the info of the actor */}
             <h1 className={styles.header}>{data.results.name}</h1>
             <b>{data.results.biography}</b>
             <h1 className={styles.header}>Involved in</h1>
-
             <div className={styles.imgWrapper}>
+              {/* Return the movies the actor has been involved in */}
               {data &&
                 data.results.combined_credits.cast.map((cast, i) => (
                   <div key={i}>

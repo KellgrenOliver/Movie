@@ -6,6 +6,7 @@ import styles from "../css/Movie.module.css";
 import { Link } from "react-router-dom";
 
 const Genres = () => {
+  // Gets data etc from useQuery
   const { data, error, isError, isLoading } = useQuery(["Genres"], () => {
     return getGenres();
   });
@@ -20,7 +21,7 @@ const Genres = () => {
             <strong>Error:</strong> {error.message}
           </Alert>
         )}
-
+        {/* If there are any data the map out the genres */}
         <div className={styles.genresWrapper}>
           {data &&
             data.results.genres.map((genre, i) => (

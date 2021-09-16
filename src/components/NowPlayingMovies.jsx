@@ -8,6 +8,7 @@ import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const LatestMovies = () => {
+  // Gets data etc from useQuery
   const { data, error, isError, isLoading } = useQuery(["NowPlaying"], () => {
     return getNowPlayingMovies();
   });
@@ -26,6 +27,7 @@ const LatestMovies = () => {
         <h1 className={headerStyles.header}>NOW PLAYING</h1>
 
         <div className={styles.cardWrapper}>
+          {/* Maps out now playing movies */}
           {data &&
             data.results.results.map((movie, i) => (
               <div className={styles.movieCard} key={i}>

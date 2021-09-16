@@ -8,6 +8,7 @@ import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const Movies = () => {
+  // Gets data etc from useQuery
   const { data, error, isError, isLoading } = useQuery(["Popular"], () => {
     return getPopularMovies();
   });
@@ -26,6 +27,7 @@ const Movies = () => {
         <h1 className={headerStyles.header}>POPULAR</h1>
 
         <div className={styles.cardWrapper}>
+          {/* Maps out popular movies */}
           {data &&
             data.results.results.map((movie, i) => (
               <div className={styles.movieCard} key={i}>
