@@ -2,11 +2,10 @@ import React from "react";
 import { Container, Nav, Navbar, NavDropdown, Alert } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { getGenres } from "../services/API";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../css/Navbar.module.css";
 
 const NavbarComponent = () => {
-  const history = useHistory();
   // Gets data etc from useQuery
   const { data, error, isError, isLoading } = useQuery(
     ["GenresFromNavbar"],
