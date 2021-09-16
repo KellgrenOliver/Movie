@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
 import { useQuery } from "react-query";
 import { getPages } from "../services/PaginationAPI";
 import { Link, useParams } from "react-router-dom";
@@ -9,20 +8,16 @@ import styles from "../css/Movie.module.css";
 import headerStyles from "../css/Headers.module.css";
 
 const MoviesGenres = () => {
-  const [page, setPage] = useState(1);
+  // Gets id, name and page from params
+  let { id, name, page } = useParams();
 
-  const { id, name } = useParams();
-
-  const { data, error, isError, isLoading, isPreviousData } = useQuery(
+  // Gets data etc from useQuery
+  const { data, error, isError, isLoading } = useQuery(
     [`MoviesFromGenre${id}`, page],
     () => {
       return getPages(id, page);
     }
   );
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   return (
     <div>
@@ -35,8 +30,10 @@ const MoviesGenres = () => {
           </Alert>
         )}
 
+        {/* Writes out genre name */}
         {data && <h1 className={headerStyles.header}>{name.toUpperCase()}</h1>}
 
+        {/* Mapping out movies from a genre */}
         <div className={styles.cardWrapper}>
           {data &&
             data.results.results.map((movie, i) => (
@@ -52,30 +49,28 @@ const MoviesGenres = () => {
             ))}
         </div>
 
+        {/* If there are any data return pagination */}
         {data && (
           <div className={styles.pagination}>
-            <Button
-              className={styles.button}
-              onClick={() =>
-                setPage((currentPage) => Math.max(currentPage - 1, 1))
-              }
-              disabled={page === 1}
-            >
-              Back
-            </Button>
+            {/* Don't show the previous link on the first page*/}
+            {parseInt(page) !== 1 && (
+              <Link
+                className={styles.button}
+                to={`/genre/${name}/${id}/${parseInt(page) - 1}`}
+              >
+                Previous
+              </Link>
+            )}
             <span className={styles.currentPage}>Current Page: {page}</span>
-
-            <Button
-              className={styles.button}
-              onClick={() => {
-                if (!isPreviousData && data.results.page) {
-                  setPage((currentPage) => currentPage + 1);
-                }
-              }}
-              disabled={isPreviousData || page === 500}
-            >
-              Next
-            </Button>
+            {/* Don't show the next link on the last page (500) */}
+            {parseInt(page) !== 500 && (
+              <Link
+                className={styles.button}
+                to={`/genre/${name}/${id}/${parseInt(page) + 1}`}
+              >
+                Next
+              </Link>
+            )}
           </div>
         )}
       </Container>

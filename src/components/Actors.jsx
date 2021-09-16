@@ -7,6 +7,7 @@ import styles from "../css/Details.module.css";
 import { Link } from "react-router-dom";
 
 const Actors = (movie) => {
+  // Gets data etc from useQuery
   const { data, error, isError, isLoading } = useQuery(["Actors"], () => {
     return getActorsFromMovie(movie.id);
   });
@@ -21,9 +22,9 @@ const Actors = (movie) => {
             <strong>Error:</strong> {error.message}
           </Alert>
         )}
-
         <h3 className={styles.header}>ACTORS</h3>
         <div className={styles.imgWrapper}>
+          {/* If there is any data mapping out results*/}
           {data &&
             data.results.cast.map((cast, i) => (
               <div key={i}>

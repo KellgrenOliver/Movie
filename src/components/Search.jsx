@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 import styles from "../css/Movie.module.css";
 
 const MoviesGenres = () => {
+  // Using useState to set search to welcome
   const [search, setSearch] = useState("welcome");
 
+  // Gets data etc from useQuery
   const { data } = useQuery([`Search`, search], () => {
     return getSearch(search);
   });
@@ -15,6 +17,7 @@ const MoviesGenres = () => {
   return (
     <div>
       <Container className="py-3">
+        {/* Makes input onChange. Input field is listening to the value in the input */}
         <input
           className={styles.searchbar}
           type="text"
@@ -25,6 +28,7 @@ const MoviesGenres = () => {
         />
 
         <div className={styles.cardWrapper}>
+          {/* If there is any results from the input then map out the movies */}
           {data &&
             data.results.results.map((movie, i) => (
               <div className={styles.movieCard} key={i}>
